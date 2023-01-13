@@ -41,3 +41,23 @@ Explanation: The following cells can flow to the Pacific and Atlantic oceans, as
        
 Note that there are other possible paths for these cells to flow to the Pacific and Atlantic oceans.
 
+Approach
+
+The main concept is to do BFS from the elements at the borders.
+
+Flows is a jagged array that keeps the state of each cell.
+If the value is 1 , then rain flows from the cell to pacific.
+If 2, rain flows from the cell to atlantic.
+If 3, then it reaches to both oceans. In such case add the result to a hashtable.
+
+Additional hashtable is used for queue in order to save time complexity of O(n) to search for elements in queue. Its O(1) in a hashset.
+
+Code is split into multiple functions to improve readability.
+
+Complexity
+
+Time complexity:
+O(n), where n is the number of elements in the matrics
+
+
+
